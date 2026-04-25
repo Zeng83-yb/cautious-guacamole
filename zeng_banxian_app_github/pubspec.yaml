@@ -1,0 +1,45 @@
+name: zeng_banxian
+description: 曾半仙算命 APP - 基于 MagicOS 系统的智能算命应用
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI 组件
+  cupertino_icons: ^1.0.6
+  
+  # 网络请求
+  dio: ^5.3.3
+  
+  # 状态管理
+  provider: ^6.0.5
+  
+  # 本地存储
+  shared_preferences: ^2.2.2
+  
+  # 日期处理
+  intl: ^0.18.1
+  
+  # 农历转换
+  lunar_calendar: ^0.2.1
+  
+  # HTTP 客户端
+  http: ^1.1.0
+  
+  # JSON 序列化
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lint: ^2.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
