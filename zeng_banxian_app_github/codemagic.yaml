@@ -1,29 +1,18 @@
 workflows:
-  flutter-workflow:
-    name: Flutter Build Android Only
-    max_build_duration: 60
-    environment:
-      flutter: stable
-      xcode: latest
-      cocoapods: default
-    scripts:
-      - name: Set Flutter version
-        script: |
-          flutter config --no-analytics
-          flutter --version
-      - name: Get dependencies
-        script: |
-          flutter pub get
-      - name: Build Android APK
-        script: |
-          flutter build apk --debug
-    triggers:
-      push:
-        branches:
-          - main
-    cache:
-      cache_paths:
-        - $HOME/.pub-cache
-        - $HOME/.gradle/caches
-    artifacts:
-      - build/**/outputs/**/*.apk
+     flutter-workflow:
+       name: Flutter Android Build
+       environment:
+         flutter: stable
+         xcode: latest
+       scripts:
+         - name: Installing dependencies
+           script: |
+             flutter pub get
+         - name: Building APK
+           script: |
+             flutter build apk --debug
+       artifacts:
+         - build/**/outputs/**/*.apk
+       cache:
+         - $HOME/.pub-cache
+         - $HOME/.gradle/caches
